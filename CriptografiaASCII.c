@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_TAM 100 // DefiniÁ„o do tamanho m·ximo da string
+#define MAX_TAM 100 // Defini√ß√£o do tamanho m√°ximo da string
 
 void criptografar(char *texto) {
     int i = 0;
     while (texto[i] != ';' && texto[i] != '\0') {
-        texto[i] = (5 * texto[i] + 100) % 256;//A regra de criptografia deve substituir o cÛdigo ASCII de cada caractere que compıe a mensagem por: (5*cÛdigo_ASCII + 100) % 256 
+        texto[i] = (5 * texto[i] + 100) % 256;//A regra de criptografia deve substituir o c√≥digo ASCII de cada caractere que comp√µe a mensagem por: (5*c√≥digo_ASCII + 100) % 256 
         i++;
     }
 }
@@ -22,12 +22,12 @@ int main() {
         // Verifica se a entrada termina com ponto e virgula
         if (strchr(texto, ';') == NULL) {
             printf("Erro: O texto precisa terminar com ';'.\n");
-            	while (getchar() != '\n'); // Limpa o buffer do teclado (boas praticas padr„o Rocky Balboa)
+            	while (getchar() != '\n'); // Limpa o buffer do teclado (boas praticas padr√£o Rocky Balboa)
             		continue;}
 
         printf("\nTexto original: %s\n", texto); //Retorna o texto original
 
-        // Chama funÁ„o que codifica o texto
+        // Chama fun√ß√£o que codifica o texto
         criptografar(texto);
         
         printf("Texto codificado: %s\n", texto);
@@ -37,7 +37,7 @@ int main() {
         scanf(" %c", &continuar);
         	while (getchar() != '\n'); // Limpador de buffer novamente
     	} 
-	while (continuar == 'S' || continuar == 's'); //Aguarda 
+	while (continuar == 'S' || continuar == 's'); //Aguarda qualquer valor diferente de S (se o usu√°rio botar N humilde)
 
     return 0;
 }
